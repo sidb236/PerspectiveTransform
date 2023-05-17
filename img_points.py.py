@@ -2,7 +2,9 @@
 import cv2
 import os
 
-    # of the points clicked on the image
+# of the points clicked on the image
+
+
 def click_event(event, x, y, flags, params):
     if event == cv2.EVENT_LBUTTONDOWN:
         print(f'({x},{y})')
@@ -25,7 +27,6 @@ def click_event(event, x, y, flags, params):
 
         except Exception as e:
             print(e)
-
 
 
 # read the input image
