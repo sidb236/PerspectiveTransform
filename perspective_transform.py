@@ -18,6 +18,13 @@ try:
     # compute the perspective transform matrix
     M = cv2.getPerspectiveTransform(src_points, dst_points)
 
+    try:
+        # Save the perspective matrix in a file
+        with open("PerspectiveMatrix.txt", 'w') as f:
+            f.write("The Perspective Matrix is saved here: {}".format(M))
+    except Exception as e:
+        print("Error found:{}".format(e))
+
     # apply the perspective transform to the image
     warped = cv2.warpPerspective(img, M, (1180, 653))
 
